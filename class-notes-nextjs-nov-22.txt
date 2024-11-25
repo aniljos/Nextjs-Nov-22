@@ -3,9 +3,26 @@ Introduction: https://forms.gle/XR6KErVjTDBQdcgo6
 
 React CDN: https://legacy.reactjs.org/docs/cdn-links.html
 
-Babel Standalone: https://cdnjs.com/libraries/babel-
+Babel Standalone: https://cdnjs.com/libraries/babel-standalone
 
 Git Repository for Mock API: https://github.com/aniljos/REST-API-Mock
 Git Repository for Class work: https://github.com/aniljos/Nextjs-Nov-22
 
 nextjs version: 14.2.18
+
+
+Typescript
+
+1. Complied, statically types
+2. 
+
+React & Angular
+
+1. Perfomance(UI rendering)
+2. React-library, Angular-framework
+
+Any JS library
+
+1. Download the .js file
+2. CDN 
+3. Install using npm or any other package manager(yarn, pnpm)
