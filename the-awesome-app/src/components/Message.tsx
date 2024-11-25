@@ -1,7 +1,7 @@
 'use client'
 type MessageProps = {
     text: string,
-    color: string
+    color?: string
 }
 
 
