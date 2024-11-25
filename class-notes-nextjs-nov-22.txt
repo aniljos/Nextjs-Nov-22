@@ -1,0 +1,11 @@
+Introduction: https://forms.gle/XR6KErVjTDBQdcgo6
+
+
+React CDN: https://legacy.reactjs.org/docs/cdn-links.html
+
+Babel Standalone: https://cdnjs.com/libraries/babel-
+
+Git Repository for Mock API: https://github.com/aniljos/REST-API-Mock
+Git Repository for Class work: https://github.com/aniljos/Nextjs-Nov-22
+
+nextjs version: 14.2.18
