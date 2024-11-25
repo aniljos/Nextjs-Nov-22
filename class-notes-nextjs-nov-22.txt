@@ -26,3 +26,42 @@ Any JS library
 1. Download the .js file
 2. CDN 
 3. Install using npm or any other package manager(yarn, pnpm)
+
+
+Project Structure
+
+1. package.json: npm configuration file	
+		-production deps, development deps
+		-scripts
+2. node_modules: folder where all dependencies are installed
+3. tsconfig.json: typescript config 
+4. .eslintrc.json: Linter config
+5. next.config.mjs: Next.js config
+		- API routes, middleware
+		- React config: compiler, 
+		- Micro-frontend 
+6. src: optional source folder	
+			-all the source code resides here
+7. app: folder for the App Router(navigation)
+8. pages: folder for the Pages Router(navigation)
+9. layout.tsx: Root component that defines app layout
+10.page.tsx: component rendered on the home route(http://localhost:3000)
+
+
+Components
+	-functional or class
+	- classified : client or server
+			client : rendered on the client(browser)
+			server : rendered on the server(web server)
+			Nextjs App Router: the default is server component
+				- to create client component use the directive 'use client'
+			Nextjs Pages Router: the default is client component
+
+Component props
+	- Creational parameters similar to HTML attributes
+			- <input type="password" id="prdName"/>
+			- <Message text="Hello React" color="blue"/>
+	-props : is always an object
+			- <Message text="Hello React" color="blue"/>
+				-props.text, props.color
+		
