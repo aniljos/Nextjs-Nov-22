@@ -65,3 +65,24 @@ Component props
 			- <Message text="Hello React" color="blue"/>
 				-props.text, props.color
 		
+		
+Component state
+	- state has to be treated as immutable
+		-  to change, create of the state, make changes to the copy, reset the state with the copy.
+		-  immutable library
+		-  reducer pattern, useReducer(hook)
+	- state updates are asynchronous
+	- state updates are batched
+			- the rerender is one per event
+			
+				count ==> 10
+			 setCounter(counter + 1);  ==> setCounter(11);
+			 setCounter(counter + 1);  ==> setCounter(11);
+			 
+			setCounter(pValue => pValue + 1);  ==> setCounter(invoke the callback)
+			setCounter(pValue => pValue + 1);  ==> setCounter(invoke the callback)
+			 
+	- signature
+		- setState(updateValue)
+		- setState(callback) : callback signature (previousValue) => updatedValue
+		
