@@ -1,4 +1,5 @@
 Introduction: https://forms.gle/XR6KErVjTDBQdcgo6
+Quiz 1: https://forms.gle/nncFSjr7MJRVukuo8
 
 
 React CDN: https://legacy.reactjs.org/docs/cdn-links.html
@@ -72,7 +73,7 @@ Component state
 		-  immutable library
 		-  reducer pattern, useReducer(hook)
 	- state updates are asynchronous
-	- state updates are batched
+	- state updates are batched(React 18)
 			- the rerender is one per event
 			
 				count ==> 10
@@ -85,4 +86,21 @@ Component state
 	- signature
 		- setState(updateValue)
 		- setState(callback) : callback signature (previousValue) => updatedValue
+		
+Component lifecycle
+	-mounted
+		- Async tasks(API callback, timer)
+		- DOM initializations - focus, addding listeners(window, document)
+	-unmounted
+		- cleanup
+		- canceling API call
+		- DOM remove events listeners
+	-useEffect is a hook to implement the lifecycle 
+		- signature: useEffect(setup method, [dependencies])
+		- mounted: useEffect(setup method, [empty dependency array])
+		- unmounting: in the setup method of mount return a callback.
+		
+			
+			
+		
 		

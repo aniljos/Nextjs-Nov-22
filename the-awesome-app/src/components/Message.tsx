@@ -1,4 +1,7 @@
 'use client'
+
+import { useEffect } from "react";
+
 type MessageProps = {
     text: string,
     color?: string
@@ -7,8 +10,20 @@ type MessageProps = {
 
 function Message(props: MessageProps){
 
-    console.log("Message props", props);
+    //console.log("Message props", props);
     const sampleJSX = (<span>This is a sample JSX expression</span>);
+    
+    useEffect(() => {
+        
+        console.log("Message component mounted...");
+
+        // this callback will be invoked before the component is unmounted
+        return () => {
+            console.log("Message component is unmounting...");
+        }
+
+    }, [])
+   
 
     return (
         <div  style={{border: `2px solid ${props.color}`, margin: "4px", padding: "4px"}}>

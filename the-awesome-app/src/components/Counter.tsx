@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangeEvent, MouseEvent, useState } from "react"
+import { ChangeEvent, MouseEvent, useEffect, useState } from "react"
 import Message from "./Message";
 
 type CounterProps = {
@@ -12,14 +12,19 @@ export default function Counter(props: CounterProps){
    
     const [counter, setCounter] = useState(props.initialValue);
    
+    useEffect(() => {
+
+        console.log("useEffect counter updated", counter);
+
+    }, [counter])
 
     function inc(evt: MouseEvent<HTMLButtonElement>){
-        console.log("in inc", evt);
+        //console.log("in inc", evt);
         //setCounter(counter + 1);
         //setCounter(counter + 1);
         setCounter(pValue => pValue + 1);
         //setCounter(pValue => pValue + 1);
-        console.log("count", counter);
+        //console.log("count", counter);
        
     }
 
