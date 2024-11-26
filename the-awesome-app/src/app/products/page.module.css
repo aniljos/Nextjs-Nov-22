@@ -1,0 +1,11 @@
+.product{
+
+    background-color: slateblue;
+    border: 2px solid blue;
+    margin: 7px;
+    padding: 7px;
+    border-radius: 15px;
+    height: 270px;
+    width: 300px;
+
+}

@@ -1,19 +1,52 @@
 'use client'
 
-import { MouseEvent, useState } from "react"
+import { MouseEvent, useRef, useState } from "react"
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage(){
 
     const [userName, setUserName] =  useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const router = useRouter();
 
-    function login(evt: MouseEvent<HTMLButtonElement>){
+    const userNameRef = useRef<HTMLInputElement>(null);
+
+    async function login(evt: MouseEvent<HTMLButtonElement>){
 
         evt.preventDefault();
-
+        console.log("username from the ref:", userNameRef.current?.value);
         if(userName && password){
-            setErrorMessage("");
+            
+            // API call
+            const url = "http://localhost:9000/login";
+            // axios
+            //     .post(url, {name: userName, password})
+            //     .then((response) => {
+
+            //         console.log("response", response);
+
+            //     }, (errorResponse) => {
+
+            //         console.log("errorResponse", errorResponse);
+            //     })
+
+            try {
+                
+                const response = await axios.post(url, {name: userName, password});
+                console.log("response", response);
+                setErrorMessage("");
+                router.push("/");
+
+            } catch (errorResponse) {
+
+                console.log("errorResponse", errorResponse);
+                setErrorMessage("Invalid credentials");
+            }
+           
+
+
         }
         else{
             //alert("Enter the credentials");
@@ -30,12 +63,12 @@ export default function LoginPage(){
                 <div className="form-group">
                     <label htmlFor="userName">Name</label>
                     <input type="text" id="userName" className="form-control" 
-                                        value={userName} onChange={e => setUserName(e.target.value)} />
+                                        value={userName} onChange={e => setUserName(e.target.value)} ref={userNameRef}/>
                 </div>
 
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
-                    <input type="text" id="password" className="form-control"
+                    <input type="password" id="password" className="form-control"
                                         value={password} onChange={e => setPassword(e.target.value)} />
                 </div>
 

@@ -100,6 +100,34 @@ Component lifecycle
 		- mounted: useEffect(setup method, [empty dependency array])
 		- unmounting: in the setup method of mount return a callback.
 		
+		
+CSS
+	- define layout & look and feel
+	- react or nextjs does not provide any css classes/layouts
+	
+Routing
+	- Creating navigational applications
+	- Client-side routing
+	- Single page application
+	- React has not api's for routing
+		- Use other libraries
+		- Nextjs has a routing library
+		- CRA or Vite uses "react router dom" library
+		
+Forms
+	- controlled input	
+		- useState to create a state, bind the state with the input(value & onChange)
+		
+		
+		
+		
+API calls
+	- XMLHttpRequest(xhr) & fetch - inbuilt in the browser
+	- axios & fetch are promise based
+	- Promise is like proxy
+		-then method to handle the proxy
+	
+		
 			
 			
 		
