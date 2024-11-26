@@ -37,7 +37,7 @@ export default function LoginPage(){
                 const response = await axios.post(url, {name: userName, password});
                 console.log("response", response);
                 setErrorMessage("");
-                router.push("/");
+                router.push("/products");
 
             } catch (errorResponse) {
 
