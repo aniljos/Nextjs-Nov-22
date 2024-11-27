@@ -168,6 +168,7 @@ State Management
 		- memory: redux, react context
 		
 Redux
+	-store: one per application
 	-action: an object
 		- {type: "login", token:"abc"}
 		- {type: "logout"}
@@ -206,10 +207,19 @@ Redux Toolkit
 		- represents a slice of the data
 		- treat state as mutable
 		-
+React Context
+	- low level API
+	- Multiple context
+	- App has to manage the rerendering
 		
 App Design and Optimization
 	- Keep the components smaller
 		- Maintainability, Testing, segregation of concerns
+		
+Excercise/Assignment
+	- Implement the Gadgets and the View Cart using context
+	- State management: useState or useReducer
+		- Try to implement this with useReducer(optional)
 		
 		
 			
