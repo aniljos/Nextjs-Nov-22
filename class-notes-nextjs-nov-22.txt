@@ -66,6 +66,12 @@ Component props
 	-props : is always an object
 			- <Message text="Hello React" color="blue"/>
 				-props.text, props.color
+	
+	<Message text="Hello React" color="blue">
+		<p>Hello</p>                          ===> props.children,
+	</Message>
+				
+				
 		
 		
 Component state
@@ -166,11 +172,45 @@ Redux
 		- {type: "login", token:"abc"}
 		- {type: "logout"}
 	-reducer: a function, receives the action, update the store
+		- multiple reducers
+		- reducer has to be synchronous
+			- Cannot make an API call
 	- libraries
 		- redux
 		- @reduxjs/toolkit - high level api
 		- react-redux - integrates redux with react
 		- npm i @reduxjs/toolkit react-redux
+		
+	- action creators: 
+			- Design pattern
+			- helepr function to create an action
+	- middleware:
+		- intercepts the action before the reducer receives it.
+		- logging, validations, async tasks(api call)
+		- Async tasks 
+			- we have libraries: redux thunk, redux saga
+		
+		
+React-redux	
+	- integrates redux with react
+	- Provider component to integrate the store with the react application
+	- Hooks
+		- useDispatch: returns the dispatch method
+		- useSelector: subscribe to the state(on a selected state)
+		- useStore: returns ahandle to the store
+		
+Redux Toolkit
+	- simplifies redux usage
+	- implements many design patterns
+	- slice
+		- represents a slice of the data
+		- treat state as mutable
+		-
+		
+App Design and Optimization
+	- Keep the components smaller
+		- Maintainability, Testing, segregation of concerns
+		
 		
 			
 

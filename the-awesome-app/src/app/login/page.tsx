@@ -3,6 +3,7 @@
 import { MouseEvent, useRef, useState } from "react"
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
 
 export default function LoginPage(){
 
@@ -10,6 +11,7 @@ export default function LoginPage(){
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const router = useRouter();
+    const dispatch = useDispatch();
 
     const userNameRef = useRef<HTMLInputElement>(null);
 
@@ -37,12 +39,21 @@ export default function LoginPage(){
                 const response = await axios.post(url, {name: userName, password});
                 console.log("response", response);
                 setErrorMessage("");
+                dispatch({type: "login", payload: {
+                    isAuthenticated: true,
+                    userName: userName,
+                    accessToken: response.data.accessToken,
+                    refreshToken: response.data.refreshToken,
+                }})
+
+
                 router.push("/products");
 
             } catch (errorResponse) {
 
                 console.log("errorResponse", errorResponse);
                 setErrorMessage("Invalid credentials");
+                dispatch({type: "logout"})
             }
            
 
