@@ -1,5 +1,6 @@
 Introduction: https://forms.gle/XR6KErVjTDBQdcgo6
 Quiz 1: https://forms.gle/nncFSjr7MJRVukuo8
+Quiz 2: https://forms.gle/tRdLSoW3asaVBTdN7
 
 
 React CDN: https://legacy.reactjs.org/docs/cdn-links.html
@@ -69,7 +70,7 @@ Component props
 		
 Component state
 	- state has to be treated as immutable
-		-  to change, create of the state, make changes to the copy, reset the state with the copy.
+		-  to change, create a copy of state, make changes to the copy, reset the state with the copy.
 		-  immutable library
 		-  reducer pattern, useReducer(hook)
 	- state updates are asynchronous
@@ -105,6 +106,10 @@ CSS
 	- define layout & look and feel
 	- react or nextjs does not provide any css classes/layouts
 	
+	- apply css	
+		- class
+		- style 
+	
 Routing
 	- Creating navigational applications
 	- Client-side routing
@@ -117,6 +122,11 @@ Routing
 Forms
 	- controlled input	
 		- useState to create a state, bind the state with the input(value & onChange)
+		- reactive
+	- uncontrolled input	
+		- useRef to create a mutable reference.
+		- A refrence to an http element(div, input...)
+			- the same reference when we use a document.getElementById()
 		
 		
 		
@@ -126,9 +136,43 @@ API calls
 	- axios & fetch are promise based
 	- Promise is like proxy
 		-then method to handle the proxy
-	
+			- 100(information), 200(Success), 300(redirect) 
+			- 400(client error), 500(server error)
+		-async & await
+			-keywords from ES6/7
+			- handle a promise in a synchronized way
+			
+
+Excercise/ Assignment: Complete the EditProductPage
+
+   1. Fetch the product details from the API
+		-GET http://localhost:9000/products/[id]
+   2. Controlled input
+        - state and bind to the input fields
+   3. ACtions
+		Save: save the data the server: PUT http://localhost:9000/products/[id]  product, navigate back to /producst route
+		Cancel: navigate back to /producst route
+		
+State Management
+	-server: not recommened
+	-client: more scalable
+		- localStorage
+		- sessionStorage
+		
+		- memory: redux, react context
+		
+Redux
+	-action: an object
+		- {type: "login", token:"abc"}
+		- {type: "logout"}
+	-reducer: a function, receives the action, update the store
+	- libraries
+		- redux
+		- @reduxjs/toolkit - high level api
+		- react-redux - integrates redux with react
+		- npm i @reduxjs/toolkit react-redux
 		
 			
-			
-		
+
+
 		
