@@ -214,12 +214,24 @@ React Context
 		
 App Design and Optimization
 	- Keep the components smaller
-		- Maintainability, Testing, segregation of concerns
+		- Maintainability, Testing, segregation of concerns, Optimization
+	- React.memo
+		- HOC(higher order component)
+		- Create a memoized copy(generated HTML) of the component when first rendered, subsequent render is reuse the memoized copy
+		- The memoized copy is invalidated and new one regenerated if the component state or props change
+	- useCallback & useMemo
+	- Virtual DOM
+	
+	- Design
+		-  HOC(higher order component)
+		-  Custom Hooks
+				- reuseable and makes use of any of React hooks
 		
 Excercise/Assignment
 	- Implement the Gadgets and the View Cart using context
 	- State management: useState or useReducer
 		- Try to implement this with useReducer(optional)
+	
 		
 		
 			

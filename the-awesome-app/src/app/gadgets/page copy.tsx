@@ -1,5 +1,4 @@
 'use client'
-import { useProducts } from '@/hooks/useProducts';
 import { Product } from '@/model/Product';
 import { addItemToCart } from '@/redux/gadgetsReducer';
 import { AppDispatch } from '@/redux/store';
@@ -11,10 +10,30 @@ import { useDispatch } from 'react-redux';
 const baseUrl = "http://localhost:9000/products";
 function GadgetStore(){
 
-   
+    const [products, setProducts] = useState<Product[]>([]);
     const dispatch = useDispatch<AppDispatch>();
-    const {products} = useProducts(baseUrl);
     
+    useEffect(() => {
+
+        fetchProducts();
+
+    }, [])
+
+    async function fetchProducts(){
+
+        try {  
+            const resp = await axios.get<Product[]>(baseUrl);
+            setProducts(resp.data);
+            console.log("resp:", resp);
+
+        } catch (error) {
+            console.log("error:", error);
+        }
+
+    }
+    
+    
+
     function addToCart(product: Product): void {
 
         const action = addItemToCart({product: product, quantity: 1});

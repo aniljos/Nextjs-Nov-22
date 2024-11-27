@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { AppState } from "@/redux/store";
 import ProductView from "./ProductView";
+import { useTitle } from "@/hooks/useTitle";
 
 const baseUrl = "http://localhost:9000/products";
 //const baseUrl = "http://localhost:9000/secure_products";
@@ -19,6 +20,7 @@ export default function ListProductsPage(){
     const [isMessageVisible, setMessageVisible] = useState(false);
     const router = useRouter();
     const auth = useSelector((state: AppState) => state.auth);
+    useTitle("Products");
    
 
     useEffect(() => {
