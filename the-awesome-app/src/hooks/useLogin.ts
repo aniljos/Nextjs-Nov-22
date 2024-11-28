@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect, useRef, useState } from "react"
+import { MouseEvent, useRef, useState } from "react"
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";

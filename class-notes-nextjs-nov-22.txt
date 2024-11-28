@@ -1,6 +1,7 @@
 Introduction: https://forms.gle/XR6KErVjTDBQdcgo6
 Quiz 1: https://forms.gle/nncFSjr7MJRVukuo8
 Quiz 2: https://forms.gle/tRdLSoW3asaVBTdN7
+Quiz 3: https://forms.gle/iF1MX25E6NtSuKZR7
 
 
 React CDN: https://legacy.reactjs.org/docs/cdn-links.html
@@ -226,13 +227,32 @@ App Design and Optimization
 		-  HOC(higher order component)
 		-  Custom Hooks
 				- reuseable and makes use of any of React hooks
+				- Easy manitainabilty
+				- Easy to test
 		
 Excercise/Assignment
 	- Implement the Gadgets and the View Cart using context
 	- State management: useState or useReducer
 		- Try to implement this with useReducer(optional)
-	
 		
+Hooks
+		useState, useEffect, useRef, useCallback, useMemo, useContext, useReducer
+		useImperativeHandle, 
+		
+Server Components in React/Nextjs
+	
+	- rendering
+		- SSR(Server-side rendering)
+		- SSG (Static-site generation)
+		- ISR (Incremental site regeneration)
+		
+Node.js
+	applications: API, database, microservices
+	
+	API(web)
+		Http module
+		Node Express
+	
 		
 			
 

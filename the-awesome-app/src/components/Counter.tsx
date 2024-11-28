@@ -19,7 +19,7 @@ export default function Counter(props: CounterProps){
     }, [counter])
 
     function inc(evt: MouseEvent<HTMLButtonElement>){
-        //console.log("in inc", evt);
+        console.log("in inc", evt);
         //setCounter(counter + 1);
         //setCounter(counter + 1);
         setCounter(pValue => pValue + 1);

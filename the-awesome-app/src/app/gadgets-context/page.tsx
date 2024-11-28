@@ -1,23 +1,24 @@
 'use client'
 import { useProducts } from '@/hooks/useProducts';
+import { useTitle } from '@/hooks/useTitle';
 import { Product } from '@/model/Product';
-import { addItemToCart } from '@/redux/gadgetsReducer';
-import { AppDispatch } from '@/redux/store';
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import { GadgetsContext } from "@/context/GadgetsContext";
+import { useContext } from 'react';
+
 
 
 const baseUrl = "http://localhost:9000/products";
 function GadgetStore(){
 
    
-    const dispatch = useDispatch<AppDispatch>();
+    const gadgetsContext = useContext(GadgetsContext);
+    useTitle("Gadgets Store")
     const {products} = useProducts(baseUrl);
-    
+   
     function addToCart(product: Product): void {
-
-        const action = addItemToCart({product: product, quantity: 1});
-        dispatch(action)
+        
+        const action = {type: "addItemToCart", payload: {product, quantity: 1}}
+        gadgetsContext.dispatch(action);
     }
 
     function renderProducts() {
