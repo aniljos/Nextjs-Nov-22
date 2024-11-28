@@ -5,7 +5,7 @@ import { addItemToCart } from '@/redux/gadgetsReducer';
 import { AppDispatch } from '@/redux/store';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-
+import Image from 'next/image';
 
 const baseUrl = "http://localhost:9000/products";
 function GadgetStore(){
@@ -32,6 +32,7 @@ function GadgetStore(){
                             <h5 className="card-title">{item.name}</h5>
                             <p className="card-text">{item.description}</p>
                             <p className="card-text text-primary">INR {item.price}</p>
+                            <Image src={"http://localhost:9000"  +  item.imageUrl} height={50} width={50} alt={"" + item.name}/>
                             <button className="btn btn-primary" onClick={() => addToCart(item)}>Add To Cart</button>
                         </div>
                     </div>

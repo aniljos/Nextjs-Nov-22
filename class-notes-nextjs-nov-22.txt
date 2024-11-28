@@ -252,6 +252,16 @@ Node.js
 	API(web)
 		Http module
 		Node Express
+		
+		Next.js - react, API
+		
+HTML form
+	action: where to submit the form( default is the current url)
+	method: the http method(GET, POST) default is GET
+	
+	values are read usins the name attribute of the form fields
+		 <input  name="name"  />
+                    
 	
 		
 			

@@ -33,7 +33,7 @@ type CustomerPageProps = {
     interval: number
 }
 
-export  async function CustomerPage(props: CustomerPageProps){
+export async function CustomerPage(props: CustomerPageProps){
 
     // const cookieStore = await cookies()
     // const theme = cookieStore.get('theme')
